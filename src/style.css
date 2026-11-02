@@ -1,11 +1,15 @@
+* {
+  font-family: Arial, Helvetica, sans-serif !important;
+}
 
-/* =========================================
-   WOODORA FURNITURE SHOP
-   COLOUR THEME
-========================================= */
-
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700;800&display=swap');
-
+html,
+body,
+button,
+input,
+textarea,
+select {
+  font-family: Arial, Helvetica, sans-serif !important;
+}
 :root {
   --cream: #ede0d4;
   --light-beige: #e6ccb2;
@@ -79,83 +83,6 @@ button {
   padding: 95px 0;
 }
 
-/* =========================================
-   LOADING SCREEN
-========================================= */
-
-.loading-screen {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--cream);
-  text-align: center;
-}
-
-.loader-content {
-  width: min(90%, 420px);
-}
-
-.loader-icon {
-  width: 75px;
-  height: 75px;
-  display: grid;
-  place-items: center;
-  margin: 0 auto 22px;
-  border-radius: 50%;
-  background: var(--dark-brown);
-  color: var(--white);
-  font-size: 30px;
-  animation: loaderPulse 1.5s infinite;
-}
-
-.loader-content h1 {
-  color: var(--dark-brown);
-  font-family: var(--serif);
-  font-size: 42px;
-  letter-spacing: 5px;
-}
-
-.loader-content p {
-  margin-top: 8px;
-  color: var(--medium-brown);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 3px;
-}
-
-.loader-line {
-  height: 4px;
-  width: 100%;
-  margin: 30px auto 15px;
-  overflow: hidden;
-  background: var(--light-beige);
-}
-
-.loader-line span {
-  display: block;
-  height: 100%;
-  width: 40%;
-  background: var(--dark-brown);
-  animation: loadingProgress 1.5s infinite ease-in-out;
-}
-
-.loader-content small {
-  color: var(--muted);
-  font-size: 10px;
-  letter-spacing: 2px;
-}
-
-@keyframes loadingProgress {
-  0% { transform: translateX(-110%); }
-  100% { transform: translateX(270%); }
-}
-
-@keyframes loaderPulse {
-  50% { transform: scale(1.09); }
-}
 
 /* =========================================
    NAVBAR
@@ -541,6 +468,7 @@ button {
 
 .category-title {
   display: flex;
+  
   align-items: center;
   gap: 12px;
   padding: 18px 4px;
@@ -3888,4 +3816,275 @@ button {
 
 .feature-item p {
   margin: 0;
+}
+/* =========================================
+   CATEGORIES SECTION
+========================================= */
+
+.categories-section {
+  width: 100%;
+  background: var(--white);
+  padding: 80px 0;
+  overflow: hidden;
+}
+
+/* SECTION HEADING */
+
+.categories-section .section-heading {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.categories-section .section-heading h2 {
+  font-size: 36px;
+  font-weight: 800;
+  color:#7e4921;
+  margin: 0;
+}
+
+/* CATEGORY GRID */
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 25px;
+  width: 100%;
+}
+
+/* CATEGORY CARD */
+
+.category-card {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  color: var(--secondary);
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.10);
+}
+
+/* CATEGORY IMAGE */
+
+.category-image {
+  width: 100%;
+  height: 210px;
+  position: relative;
+  overflow: hidden;
+  background: var(--cream);
+}
+
+.category-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.category-card:hover .category-image img {
+  transform: scale(1.1);
+}
+
+.category-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.25),
+    transparent 60%
+  );
+}
+
+/* CATEGORY TITLE */
+
+.category-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 70px;
+  padding: 15px;
+  text-align: center;
+}
+
+.category-title span {
+  font-size: 22px;
+}
+
+.category-title h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--secondary);
+}
+
+/* =========================================
+   SMALL LAPTOP
+========================================= */
+
+@media screen and (max-width: 1199px) {
+  .category-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+  }
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media screen and (max-width: 768px) {
+  .categories-section {
+    padding: 65px 0;
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .category-image {
+    height: 190px;
+  }
+
+  .categories-section .section-heading h2 {
+    font-size: 30px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media screen and (max-width: 480px) {
+  .categories-section {
+    padding: 50px 0;
+  }
+
+  .categories-section .section-heading {
+    margin-bottom: 28px;
+  }
+
+  .categories-section .section-heading h2 {
+    font-size: 26px;
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .category-image {
+    height: 135px;
+  }
+
+  .category-card {
+    border-radius: 12px;
+  }
+
+  .category-title {
+    min-height: 58px;
+    padding: 10px 5px;
+    gap: 6px;
+  }
+
+  .category-title span {
+    font-size: 17px;
+  }
+
+  .category-title h3 {
+    font-size: 12px;
+  }
+}
+
+/* =========================================
+   LARGE DESKTOP 1920px - 2559px
+========================================= */
+
+@media screen and (min-width: 1920px) and (max-width: 2559px) {
+  .categories-section {
+    padding: 110px 0;
+  }
+
+  .categories-section .section-heading h2 {
+    font-size: 48px;
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 35px;
+  }
+
+  .category-image {
+    height: 280px;
+  }
+
+  .category-title {
+    min-height: 85px;
+  }
+
+  .category-title span {
+    font-size: 28px;
+  }
+
+  .category-title h3 {
+    font-size: 20px;
+  }
+}
+
+/* =========================================
+   ULTRA WIDE 2560px+
+========================================= */
+
+@media screen and (min-width: 2560px) {
+  .categories-section {
+    padding: 140px 0;
+  }
+
+  .categories-section .container {
+    max-width: 2100px;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .categories-section .section-heading {
+    margin-bottom: 65px;
+  }
+
+  .categories-section .section-heading h2 {
+    font-size: 60px;
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 45px;
+  }
+
+  .category-card {
+    border-radius: 22px;
+  }
+
+  .category-image {
+    height: 350px;
+  }
+
+  .category-title {
+    min-height: 100px;
+    gap: 15px;
+  }
+
+  .category-title span {
+    font-size: 34px;
+  }
+
+  .category-title h3 {
+    font-size: 24px;
+  }
 }

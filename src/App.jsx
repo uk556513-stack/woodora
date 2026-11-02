@@ -371,24 +371,6 @@ function App() {
 
   const closeMenu = () => setMenuOpen(false);
 
-  if (loading) {
-    return (
-      <div className="loading-screen">
-        <div className="loader-content">
-          <div className="loader-icon">
-            <FaCouch />
-          </div>
-          <h1>WOODORA</h1>
-          <p>FURNITURE FOR BETTER LIVING</p>
-          <div className="loader-line">
-            <span></span>
-          </div>
-          <small>CREATING YOUR COMFORT...</small>
-        </div>
-      </div>
-    );
-  }
-
   return (
     <div className="furniture-website">
 
@@ -505,11 +487,9 @@ function App() {
       <section className="categories-section section-padding" id="categories">
         <div className="container">
           <div className="section-heading" data-aos="fade-up">
-            <span>EXPLORE OUR COLLECTION</span>
+            
             <h2>Shop by Category</h2>
-            <p>
-              Find the perfect pieces to make every room feel like home.
-            </p>
+            
           </div>
 
           <div className="category-grid">
@@ -525,7 +505,7 @@ function App() {
                 <div className="category-image">
                   <img src={category.image} alt={category.name} />
                   <div className="category-overlay">
-                    <span>Explore <FaArrowRight /></span>
+                   
                   </div>
                 </div>
                 <div className="category-title">
@@ -542,11 +522,9 @@ function App() {
       <section className="products-section section-padding" id="products">
         <div className="container">
           <div className="section-heading" data-aos="fade-up">
-            <span>MADE FOR YOUR SPACE</span>
+           
             <h2>Our Furniture Collection</h2>
-            <p>
-              Explore furniture designed for everyday comfort and style.
-            </p>
+            
           </div>
 
           <div className="product-filters" data-aos="fade-up">
@@ -637,9 +615,7 @@ function App() {
               Refresh your favourite spaces with beautiful furniture
               and special collection offers.
             </p>
-            <a href="#products" className="button-primary">
-              Explore Offers <FaArrowRight />
-            </a>
+            
           </div>
 
           <div className="offer-image" data-aos="fade-left">
@@ -652,11 +628,9 @@ function App() {
       <section className="arrivals-section section-padding" id="arrivals">
         <div className="container">
           <div className="section-heading" data-aos="fade-up">
-            <span>FRESH FROM OUR COLLECTION</span>
+            
             <h2>New Arrivals</h2>
-            <p>
-              Discover our latest furniture pieces for modern living.
-            </p>
+           
           </div>
 
           <div className="arrivals-grid">
@@ -697,7 +671,7 @@ function App() {
           </div>
 
           <div className="collection-content" data-aos="fade-left">
-            <span>THE ART OF LIVING</span>
+            
             <h2>Thoughtful Design. Timeless Comfort.</h2>
             <p>
               Create a home that reflects your personality with
@@ -723,7 +697,7 @@ function App() {
           </div>
 
           <div className="about-content" data-aos="fade-left">
-            <span className="section-label">OUR STORY</span>
+            
             <h2>
               Furniture That Makes
               <span> Every Moment Special.</span>
@@ -753,11 +727,9 @@ function App() {
       <section className="why-section section-padding">
         <div className="container">
           <div className="section-heading" data-aos="fade-up">
-            <span>THE WOODORA DIFFERENCE</span>
+           
             <h2>Why Choose Us?</h2>
-            <p>
-              We focus on the details that make furniture worth bringing home.
-            </p>
+           
           </div>
 
           <div className="why-grid">
@@ -800,12 +772,9 @@ function App() {
       <section className="reviews-section section-padding">
         <div className="container">
           <div className="section-heading" data-aos="fade-up">
-            <span>HAPPY HOMES, HAPPY CUSTOMERS</span>
+            
             <h2>What Our Customers Say</h2>
-            <p>
-              A few words from people who have made our furniture part
-              of their homes.
-            </p>
+            
           </div>
 
           <div className="reviews-grid">
@@ -841,12 +810,9 @@ function App() {
       <section className="faq-section section-padding" id="faq">
         <div className="container faq-container">
           <div className="section-heading" data-aos="fade-up">
-            <span>NEED SOME HELP?</span>
+           
             <h2>Frequently Asked Questions</h2>
-            <p>
-              Find answers to common questions about our furniture
-              and services.
-            </p>
+            
           </div>
 
           <div className="faq-list" data-aos="fade-up">
@@ -881,17 +847,12 @@ function App() {
       <section className="contact-page section-padding" id="contact">
         <div className="container">
           <div className="section-heading" data-aos="fade-up">
-            <span>WE WOULD LOVE TO HEAR FROM YOU</span>
+            
             <h2>Let's Talk About Your Space</h2>
-            <p>
-              Have a question or need help choosing furniture?
-              Send us a message.
-            </p>
+           
           </div>
 
-          <div className="contact-hero-image" data-aos="zoom-in">
-            <img src={contactImage} alt="Furniture showroom interior" />
-          </div>
+         
 
           <div className="contact-grid">
             <div className="contact-details" data-aos="fade-right">
@@ -1001,12 +962,9 @@ function App() {
       {/* NEWSLETTER */}
       <section className="newsletter-section">
         <div className="container newsletter-content" data-aos="fade-up">
-          <span>STAY INSPIRED</span>
+          
           <h2>Get the Latest from Woodora</h2>
-          <p>
-            Discover new collections, design ideas and furniture updates.
-          </p>
-
+          
           <form
             className="newsletter-form"
             onSubmit={(event) => event.preventDefault()}
